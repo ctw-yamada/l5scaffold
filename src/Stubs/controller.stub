@@ -70,7 +70,7 @@ class {{Model}}Controller extends Controller
 	public function show($id)
 	{
 		${{model}} = $this->model->findOrFail($id);
-		
+
 		return view('{{models}}.show', compact('{{model}}'));
 	}
 
@@ -83,7 +83,7 @@ class {{Model}}Controller extends Controller
 	public function edit($id)
 	{
 		${{model}} = $this->model->findOrFail($id);
-		
+
 		return view('{{models}}.edit', compact('{{model}}'));
 	}
 
@@ -98,7 +98,7 @@ class {{Model}}Controller extends Controller
 	{
 		$inputs = $request->all();
 
-		${{model}} = $this->model->findOrFail($id);		
+		${{model}} = $this->model->findOrFail($id);
 		${{model}}->update($inputs);
 
 		return redirect()->route('{{prefix}}{{models}}.index')->with('message', 'Item updated successfully.');
