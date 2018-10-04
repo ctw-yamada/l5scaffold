@@ -1,3 +1,7 @@
+# environment
+confirmed
+Laravel 5.6.27
+
 # Laravel 5.x Scaffold Generator
 [![Travis](https://img.shields.io/travis/laralib/l5scaffold.svg?style=flat-square)](https://github.com/laralib/l5scaffold)
 [![Packagist](https://img.shields.io/packagist/dt/laralib/l5scaffold.svg?style=flat-square)](https://packagist.org/packages/laralib/l5scaffold)
@@ -60,7 +64,7 @@ After don't forget to run:
 php artisan migrate
 ```
 ## Custom stub
-Create a new folder inside **Stubs > views** with your UI name custom 
+Create a new folder inside **Stubs > views** with your UI name custom
 ![image](http://i66.tinypic.com/10ndpgw.png)
 
 Custom fields in `Stubs > views > **ui-name** > fields`

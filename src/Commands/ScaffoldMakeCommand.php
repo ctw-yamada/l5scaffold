@@ -124,6 +124,9 @@ class ScaffoldMakeCommand extends Command
 
         $this->meta['schema'] = $this->option('schema');
         $this->meta['prefix'] = ($prefix = $this->option('prefix')) ? "$prefix." : "";
+
+        // config
+        $this->meta['ModelNameSpace'] = config('l5scaffold.model.namespace','App');
     }
 
     /**
