@@ -171,40 +171,58 @@ trait MakerTrait
      */
     protected function getPath($file_name, $path='controller')
     {
-        if($path == "controller")
-        {
-            return './app/Http/Controllers/' . $file_name . '.php';
+      if($path == "controller")
+      {
+        $file_path = config('l5scaffold.'. $path . '.path',
+          './app/Http/Controllers/');
+        return $file_path. $file_name . '.php';
         }
-        elseif($path == "model")
-        {
-            return './app/'.$file_name.'.php';
+      elseif($path == "model")
+      {
+        $file_path = config('l5scaffold.'. $path . '.path',
+          './app/');
+        return $file_path. $file_name.'.php';
         }
-        elseif($path == "seed")
-        {
-            return './database/seeds/'.$file_name.'.php';
-        }
-        elseif($path == "view-index")
-        {
-            return './resources/views/'.$file_name.'/index.blade.php';
-        }
-        elseif($path == "view-edit")
-        {
-            return './resources/views/'.$file_name.'/edit.blade.php';
-        }
-        elseif($path == "view-show")
-        {
-            return './resources/views/'.$file_name.'/show.blade.php';
-        }
-        elseif($path == "view-create")
-        {
-            return './resources/views/'.$file_name.'/create.blade.php';
-        }
-        elseif($path == "localization"){
-            return './resources/lang/'.$file_name.'.php';
-        }
-        elseif($path == "route"){
-            return './app/Http/routes.php';
-        }
+      elseif($path == "seed")
+      {
+        $file_path = config('l5scaffold.'. $path . '.path',
+          './database/seeds/');
+        return $file_path. $file_name.'.php';
+      }
+      elseif($path == "view-index")
+      {
+        $file_path = config('l5scaffold.'. $path . '.path',
+          './resources/views/');
+        return $file_path. $file_name.'/index.blade.php';
+      }
+      elseif($path == "view-edit")
+      {
+        $file_path = config('l5scaffold.'. $path . '.path',
+          './resources/views/');
+        return $file_path. $file_name.'/edit.blade.php';
+      }
+      elseif($path == "view-show")
+      {
+        $file_path = config('l5scaffold.'. $path . '.path',
+          './resources/views/');
+        return $file_path. $file_name.'/show.blade.php';
+      }
+      elseif($path == "view-create")
+      {
+        $file_path = config('l5scaffold.'. $path . '.path',
+          './resources/views/');
+        return $file_path. $file_name.'/create.blade.php';
+      }
+      elseif($path == "localization"){
+        $file_path = config('l5scaffold.'. $path . '.path',
+          './resources/lang/');
+        return $file_path. $file_name.'.php';
+      }
+      elseif($path == "route"){
+        $file_path = config('l5scaffold.'. $path . '.path',
+          './app/Http/routes.php');
+        return $file_path;
+      }
     }
 
     protected function getFile($file)
