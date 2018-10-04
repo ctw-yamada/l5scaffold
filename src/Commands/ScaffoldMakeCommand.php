@@ -127,6 +127,7 @@ class ScaffoldMakeCommand extends Command
 
         // config
         $this->meta['ModelNameSpace'] = config('l5scaffold.model.namespace','App');
+        $this->meta['CtrlNameSpace'] = config('l5scaffold.controller.namespace','App\Http\Controllers');
     }
 
     /**
