@@ -1,4 +1,6 @@
-<div class="form-group">
-	<label for="{{field.name}}-field">{{field.Name}}</label>
-	--{{field.name}}--
+<div class="field">
+  <label class="label" for="{{field.name}}-field">{{field.Name}}</label>
+  <div class="control">
+    --{{field.name}}--
+  </div>
 </div>

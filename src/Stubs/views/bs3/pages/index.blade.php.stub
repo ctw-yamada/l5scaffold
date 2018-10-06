@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('{{ViewExtendLayout}}')
 
 @section('header')
     <div class="page-header clearfix">
@@ -28,12 +28,12 @@
                                 <td class="text-center"><strong>{{${{model}}->id}}</strong></td>
 
                                 {{table_fields_content}}
-                                
+
                                 <td class="text-right">
                                     <a class="btn btn-xs btn-primary" href="{{ route('{{prefix}}{{models}}.show', ${{model}}->id) }}">
                                         <i class="glyphicon glyphicon-eye-open"></i> View
                                     </a>
-                                    
+
                                     <a class="btn btn-xs btn-warning" href="{{ route('{{prefix}}{{models}}.edit', ${{model}}->id) }}">
                                         <i class="glyphicon glyphicon-edit"></i> Edit
                                     </a>

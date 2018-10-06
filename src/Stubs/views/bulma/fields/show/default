@@ -1,4 +1,4 @@
-<label>{{field.Name}}</label>
+<label class="has-text-weight-bold">{{field.Name}}</label>
 <p>
 	{{ ${{model}}->{{field.name}} }}
 </p>

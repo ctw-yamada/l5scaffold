@@ -1,16 +1,19 @@
-@extends('layout')
-
-@section('header')
-    <div class="page-header">
-        <h1><i class="glyphicon glyphicon-plus"></i> {{Model}} / Create </h1>
-    </div>
-@endsection
+@extends('{{ViewExtendLayout}}')
 
 @section('content')
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">
+            <i class="fas fa-align-justify"></i> {{Model}} / @lang('l5scaffold.create')
+          </h1>
+        </div>
+      </div>
+    </section>
     @include('error')
 
     <div class="row">
-        <div class="col-md-12">
+        <div class="is-full-desktop">
 
             <form action="{{ route('{{prefix}}{{models}}.store') }}" method="POST">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -18,8 +21,10 @@
                 {{form_fields_empty}}
 
                 <div class="well well-sm">
-                    <button type="submit" class="btn btn-primary">Create</button>
-                    <a class="btn btn-link pull-right" href="{{ route('{{prefix}}{{models}}.index') }}"><i class="glyphicon glyphicon-backward"></i> Back</a>
+                    <button type="submit" class="button is-primary">@lang('l5scaffold.create')</button>
+                    <a class="button is-link pull-right" href="{{ route('{{prefix}}{{models}}.index') }}">
+                      <i class="fas fa-backward"></i> @lang('l5scaffold.back')
+                    </a>
                 </div>
             </form>
 

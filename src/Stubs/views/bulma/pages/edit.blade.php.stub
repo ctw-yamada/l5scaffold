@@ -1,16 +1,17 @@
-@extends('layout')
-
-@section('header')
-    <div class="page-header">
-        <h1><i class="glyphicon glyphicon-edit"></i> {{Model}} / Edit #{{${{model}}->id}}</h1>
-    </div>
-@endsection
+@extends('{{ViewExtendLayout}}')
 
 @section('content')
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title"><i class="far fa-edit"></i> {{Model}} / @lang('l5scaffold.edit') #{{${{model}}->id}}</h1>
+        </div>
+      </div>
+    </section>
     @include('error')
 
     <div class="row">
-        <div class="col-md-12">
+        <div class="is-full-desktop">
 
             <form action="{{ route('{{prefix}}{{models}}.update', ${{model}}->id) }}" method="POST">
                 <input type="hidden" name="_method" value="PUT">
@@ -18,9 +19,15 @@
 
                 {{form_fields_fillable}}
 
-                <div class="well well-sm">
-                    <button type="submit" class="btn btn-primary">Save</button>
-                    <a class="btn btn-link pull-right" href="{{ route('{{prefix}}{{models}}.index') }}"><i class="glyphicon glyphicon-backward"></i>  Back</a>
+                <div class="level is-mobile has-background-light">
+                  <div class="is-half-desktop level-left">
+                    <button type="submit" class="button is-danger">@lang('l5scaffold.save')</button>
+                  </div>
+                  <div class="is-half-desktop level-right">
+                    <a class="button is-link pull-right" href="{{ route('{{prefix}}{{models}}.index') }}">
+                      <i class="fas fa-backward"></i>  @lang('l5scaffold.back')
+                    </a>
+                  </div>
                 </div>
             </form>
 

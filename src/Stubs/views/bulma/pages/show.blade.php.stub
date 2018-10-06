@@ -1,31 +1,33 @@
-@extends('layout')
-@section('header')
-    <div class="page-header">
-        <h1>{{Model}} / Show #{{${{model}}->id}}</h1>
-    </div>
-@endsection
+@extends('{{ViewExtendLayout}}')
 
 @section('content')
-    <div class="well well-sm">
-        <div class="row">
-            <div class="col-md-6">
-                <a class="btn btn-link" href="{{ route('{{prefix}}{{models}}.index') }}"><i class="glyphicon glyphicon-backward"></i> Back</a>
-            </div>
-            <div class="col-md-6">
-                 <a class="btn btn-sm btn-warning pull-right" href="{{ route('{{prefix}}{{models}}.edit', ${{model}}->id) }}">
-                    <i class="glyphicon glyphicon-edit"></i> Edit
-                </a>
-            </div>
-        </div>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">{{Model}} / Show #{{${{model}}->id}}</h1>
+      </div>
+    </div>
+  </section>
+  <div class="level is-mobile has-background-light">
+    <div class="is-half-desktop level-left">
+      <a class="button is-link" href="{{ route('{{prefix}}{{models}}.index') }}">
+        <i class="fas fa-backward"></i> @lang('l5scaffold.back')
+      </a>
+    </div>
+    <div class="is-half-desktop level-right">
+          <a class="button is-sm is-warning" href="{{ route('{{prefix}}{{models}}.edit', ${{model}}->id) }}">
+            <i class="far fa-edit"></i> @lang('l5scaffold.edit')
+        </a>
+    </div>
+  </div>
+
+  <div class="row">
+
+    <div class="is-full-desktop">
+
+      {{form_fields_show}}
+
     </div>
 
-    <div class="row">
-
-        <div class="col-md-12">
-
-            {{form_fields_show}}
-
-        </div>
-
-    </div>
+  </div>
 @endsection
